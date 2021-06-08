@@ -105,6 +105,13 @@ body {
 }
 
 @media (max-width: 425px) {
+  .top-bar-open ul,
+  .top-bar-open li {
+    margin: 4rem auto;
+  }
+}
+
+@media (max-width: 425px) {
   .top-bar-open i {
     margin: auto auto auto 15rem;
   }
@@ -133,7 +140,7 @@ body {
 
 .social-media {
   position: fixed;
-  z-index: 100;
+  z-index: 11;
   bottom: 0;
   right: 0;
   margin: auto 2rem 3rem auto;
