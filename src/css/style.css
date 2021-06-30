@@ -11,6 +11,7 @@ html {
 
 body {
   background-color: #202020;
+  font-family: "Montserrat", sans-serif;
 }
 
 .menu {
@@ -23,6 +24,7 @@ body {
   position: fixed;
   width: 100%;
   z-index: 100;
+  transition: all 0.5s ease;
 }
 
 .menu ul {
@@ -49,6 +51,7 @@ body {
   list-style: none;
   text-decoration: none;
   color: #eeee;
+  font-weight: bold;
 }
 
 @media (max-width: 1023px) {
@@ -174,27 +177,28 @@ article h1 {
   color: #eeee;
   position: absolute;
   z-index: 10;
-  margin: 20rem 10rem auto;
+  margin: 19rem auto auto 8rem;
 }
 
-article button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.item-1 h3,
+.item-2 h3,
+.item-3 h3,
+.item-4 h3 {
   padding: 1rem;
-  width: 100%;
-  max-width: 200px;
-  border-radius: 100px;
-  background: #60412c;
-  border: none;
   color: #eeee;
-  margin: 27rem 10rem auto;
-  outline: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1.2rem;
+  margin: 26rem auto auto 7rem;
+  font-size: 1.4rem;
   position: absolute;
   z-index: 10;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.item-2 h3 {
+  margin: 26rem auto auto 5rem;
+}
+
+.item-3 h3 {
+  margin: 26rem auto auto 4rem;
 }
 
 article i {
@@ -202,7 +206,7 @@ article i {
   color: #eeee;
   position: absolute;
   z-index: 10;
-  margin: 15rem 15rem auto;
+  margin: 15rem auto auto 14rem;
 }
 
 @media (max-width: 375px) {
@@ -225,13 +229,19 @@ article i {
 }
 
 @media (max-width: 425px) {
-  article button {
+  .item-1 h3,
+  .item-2 h3,
+  .item-3 h3,
+  .item-4 h3 {
     margin: 27rem 7rem auto;
   }
 }
 
 @media (max-width: 320px) {
-  article button {
+  .item-1 h3,
+  .item-2 h3,
+  .item-3 h3,
+  .item-4 h3 {
     margin: 25rem 4rem auto;
     padding: 0.6rem;
   }
@@ -248,27 +258,68 @@ article i {
 .item-2 img,
 .item-3 img,
 .item-4 img {
+  image-rendering: optimizeSpeed;
   width: 100%;
   max-width: 475px;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .item-1:hover,
 .item-2:hover,
 .item-3:hover,
 .item-4:hover {
-  transform: scale(1.1);
+  transform: scale(0.96);
 }
 
 .combo-container {
   height: 80vh;
+  margin: 9rem auto;
+  background-image: url("../images/background-img/background2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 10% 40%;
+  image-rendering: optimizeSpeed;
 }
 
-.combo-container h1 {
-  text-align: center;
-  color: #eeee;
+.combo-container:before {
+  background: transparent
+    linear-gradient(
+      to bottom right,
+      rgba(93, 70, 32, 0.5) 90%,
+      rgba(142, 98, 5, 0.6)
+    );
+  content: "";
+  height: 80vh;
+  position: absolute;
+  width: 100%;
+}
+
+.monday {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 800px;
+  image-rendering: optimizeSpeed;
   margin: 10rem auto auto auto;
-  font-size: 4rem;
+}
+.cake {
+  position: absolute;
+  right: 0;
+  image-rendering: optimizeSpeed;
+}
+
+.milkshake {
+  position: absolute;
+  left: 0;
+  image-rendering: optimizeSpeed;
+}
+
+@media (max-width: 425px) {
+  .combo-container img {
+    max-width: 400px;
+  }
 }
 
 @media (max-width: 375px) {
@@ -277,9 +328,18 @@ article i {
   }
 }
 
+.img-combo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: auto;
+  position: relative;
+}
+
 .combos {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   margin: auto;
@@ -287,75 +347,59 @@ article i {
 
 .combos img {
   width: 100%;
-  max-width: 400px;
+  max-width: 280px;
   animation-name: coffee;
   animation-duration: 8s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   opacity: 0;
-  margin: 0;
+  margin: 15rem auto auto auto;
   padding: 0;
+  image-rendering: optimizeSpeed;
 }
 
-@keyframes coffee {
-  0% {
-    opacity: 0;
-    transform: scale(0.1) rotate(0deg);
-  }
-  15% {
-    opacity: 1;
-    transform: scale(1.2) rotate(1440deg);
-  }
-  90% {
-    opacity: 1;
-    transform: scale(0.9) rotate(1440deg);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.1) rotate(0deg);
-  }
-}
-
-@media (max-width: 425px) {
+@media (max-width: 475px) {
   .combos img {
     width: 100%;
-    max-width: 300px;
+    max-width: 230px;
   }
 }
 
 @media (max-width: 375px) {
   .combos img {
     width: 100%;
-    max-width: 200px;
+    max-width: 180px;
   }
 }
 
-.combo-container button {
+.combo-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
-  padding: 1rem;
+  padding: 1.4rem;
   width: 100%;
-  max-width: 200px;
+  max-width: 300px;
   border-radius: 100px;
-  background: #60412c;
+  background: #eeee;
   border: none;
-  color: #eeee;
+  color: #60412cfa;
   margin: 2rem auto;
   outline: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 1.2rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  position: relative;
 }
-
-.combo-container button:hover {
+.combo-btn:hover {
   transform: scale(1.1);
 }
 
 .about {
   margin: 5rem auto;
-  background-image: url("./images/background-img/background1.jpg");
+  image-rendering: optimizeSpeed;
+  background-image: url("../images/background-img/background1.jpg");
 }
 
 @media (max-width: 768px) {
@@ -380,9 +424,9 @@ article i {
   background-color: rgba(0, 0, 0, 0.5);
   margin: 2rem auto;
   padding: 10rem;
-  width: 100%;
-  max-width: 500px;
   border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
   font-size: 1.2rem;
 }
 
